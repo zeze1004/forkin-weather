@@ -1,23 +1,31 @@
+//노마드코더 1.1  2분부터 다시 보기
+
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+//import { StyleSheet, Text, View } from 'react-native';
+import Loading from "./Loading"
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
+  return <Loading /> 
+    
+  //   (
+  //   <View style={styles.container}>
       
-      <View style = {styles.yellowView}>
-        <Text>♥ 제제 ♥</Text>
-      </View>
+  //     <View style = {styles.yellowView}>
+  //       <Text>♥ 제제 ♥</Text>
+  //     </View>
       
-      <View style = {styles.blueView} >
-      <Text>♥ 조아 ♥</Text>
-      </View>
-      {/* <StatusBar style="auto" /> */}
-    </View>
-  );
+  //     <View style = {styles.blueView} >
+  //     <Text>♥ 조아 ♥</Text>
+  //     </View>
+  //     {/* <StatusBar style="auto" /> */}
+  //   </View>
+  // );
+  
 }
 
+/*
 const styles = StyleSheet.create({
   container: {
     // 플렉스 디폴트값이 컬럼이므로 row로 설정하면 일렬로 정렬
@@ -42,3 +50,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
+*/
