@@ -4,7 +4,7 @@ import {StyleSheet, Text, View } from "react-native"
 export default function Loading() {
     return ( 
     <View style={styles.container}>
-        <Text>제제는 좆간지가 철철 흐르지</Text>
+        <Text style ={styles.text} >학습공동체 자기개발서 팀 화이팅</Text>
     </View>
     )
 }
@@ -13,7 +13,15 @@ export default function Loading() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        justifyContent: "flex-end",
+        paddingHorizontal: 30,
+        paddingVertical: 100,
+        backgroundColor: "pink"
+    },
+    text :{
+        color: "white",
+        fontSize: 30
     }
 
 })
