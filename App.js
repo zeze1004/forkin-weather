@@ -13,7 +13,7 @@ export default class extends React.Component {
     console.log(location)
   }
   componentDidMount(){
-    this.getLocation
+    this.getLocation()
   }
   render() {
   return <Loading />
@@ -34,7 +34,7 @@ export default class extends React.Component {
   //   </View>
   // );
   
-}
+// }
 
 /*
 const styles = StyleSheet.create({
