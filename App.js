@@ -10,12 +10,14 @@ import * as Location from "expo-location"
 
 export default class extends React.Component {
   getLocation = async() => {
+    // try 구문에서 오류 생기면 catch로 이동: 에러 출력
     try {
-      const response = await Location.requestPermissionsAsync()
-      console.log(response)
+      await Location.requestPermissionsAsync()
+      const { coords } = await Location.getCurrentPositionAsync()
+      console.log(coords.latitude, coords.longitude)
       const location = await Location.getCurrentPositionAsync()
-      console.log(location)
-      Alert.alert("can find you")
+      // console.log(location)
+      // Alert.alert("can find you")
     } catch (error) {
       Alert.alert("Can't find you")
     }      
