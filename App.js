@@ -1,6 +1,6 @@
 //노마드코더 1.1  2분부터 다시 보기
 
-import { StatusBar } from 'expo-status-bar';
+//import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {Alert} from "react-native"
 //import { StyleSheet, Text, View } from 'react-native';
@@ -11,14 +11,14 @@ import * as Location from "expo-location"
 export default class extends React.Component {
   getLocation = async() => {
     try {
-      const reponse = await Location.requestPermissionsAsync()
+      const response = await Location.requestPermissionsAsync()
       console.log(response)
       const location = await Location.getCurrentPositionAsync()
       console.log(location)
+      Alert.alert("can find you")
     } catch (error) {
-      Alert.alert("can't find you")
-    }
-        
+      Alert.alert("Can't find you")
+    }      
   }
   componentDidMount(){
     this.getLocation()
