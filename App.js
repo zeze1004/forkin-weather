@@ -1,5 +1,6 @@
 //노마드코더 1.1  2분부터 다시 보기
 
+
 //import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Alert } from "react-native"
@@ -7,6 +8,7 @@ import { Alert } from "react-native"
 import Loading from "./Loading"
 import * as Location from "expo-location"
 
+const API_KEY = "760de756473d169602ac495a2d41a9b9"
 
 export default class extends React.Component {
   state = {
