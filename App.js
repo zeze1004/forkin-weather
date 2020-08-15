@@ -1,4 +1,3 @@
-//노마드코더 1.1  2분부터 다시 보기
 
 
 //import { StatusBar } from 'expo-status-bar';
@@ -7,12 +6,16 @@ import { Alert } from "react-native"
 //import { StyleSheet, Text, View } from 'react-native';
 import Loading from "./Loading"
 import * as Location from "expo-location"
+import axios from "axios"
 
 const API_KEY = "760de756473d169602ac495a2d41a9b9"
 
 export default class extends React.Component {
   state = {
     isLoading: true
+  }
+  getWeather = async() => {
+    const { data } = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${API_KEY}`)
   }
   getLocation = async() => {
     // try 구문에서 오류 생기면 catch로 이동: 에러 출력
@@ -24,6 +27,7 @@ export default class extends React.Component {
       } = await Location.getCurrentPositionAsync()
       // latitude: 위도, longitude: 경로
       // console.log(coords.latitude, coords.longitude)
+      this.getWeather(latitude, longitude)
       this.setState( { isLoading:false })
       //const location = await Location.getCurrentPositionAsync()
       // console.log(location)
