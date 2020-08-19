@@ -14,9 +14,13 @@ export default class extends React.Component {
   state = {
     isLoading: true
   }
-  getWeather = async() => {
-    const { data } = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${API_KEY}`)
+  getWeather = async(latitude, longitude) => {
+    const { data } = await axios.get(
+      `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${API_KEY}`
+      )
+    console.log(data)
   }
+  
   getLocation = async() => {
     // try 구문에서 오류 생기면 catch로 이동: 에러 출력
     try {
